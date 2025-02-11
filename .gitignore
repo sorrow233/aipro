@@ -1,0 +1,30 @@
+# Virtual Environment
+venv/
+env/
+.env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Output files
+output/
+*.log
+
+# System generated files
+maybe_relevant_files
+*maybe_relevant_files*
+
+# Sensitive files
+config.py
+*.env
+.env 
