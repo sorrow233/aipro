@@ -1,4 +1,5 @@
-这是一个基于大语言模型的对话助手系统，能够帮助用户深入了解感兴趣的话题。系统会将复杂话题分解为多个方面，并以通俗易懂的方式进行解释。
+询问一个问题，AI自动分解为多个方面，并行处理，生成最终的综合报告
+
 
 ## 特点
 
@@ -13,9 +14,10 @@
 pip install -r requirements.txt
 ```
 
+
 ## 配置
 
-1. 在 `config.py` 中配置你的 API 密钥：
+1. 在 `config.py` 中配置你的 API 密钥，要删除config.example.py的.example：
 ```python
 API_BASE_URL = "你的API基础URL"
 API_KEY = "你的API密钥"
@@ -37,6 +39,7 @@ WORKFLOW_STAGES = {
     'scoring': "deepseek-ai/deepseek-r1"         # 评分阶段
 }
 ```
+
 
 ## 使用方法
 
@@ -62,6 +65,8 @@ python main.py
    - `output/[时间戳]/分解结构.json`：话题分解结构
    - `output/[时间戳]/*.txt`：详细处理日志
 
+最终结果展示：https://sorrow233.notion.site/197c238567d3809abd1eca3d5eeb98ac
+
 ## 目录结构
 
 ```
@@ -79,6 +84,7 @@ python main.py
 └── output/             # 输出目录
 ```
 
+
 ## 高级功能
 
 1. 继续之前的会话（从分支研究完成之后继续）：
@@ -94,16 +100,14 @@ python continue.py
 3. 自定义分支：
 可在话题分解时添加自定义关注点
 
+
 ## 注意事项
 
-- 确保 API 密钥配置正确
-- 保持网络连接稳定
+- 确保 API 密钥配置正确，config.example.py只是示例，要删除.example
 - 建议定期备份 output 目录
+
 
 ## 常见问题
 
 Q: 如何修改并行处理的数量？
 A: 在 config.py 中调整 MAX_CONCURRENT_TASKS 参数
-
-Q: 如何更改输出目录？
-A: 在 config.py 中修改 OUTPUT_DIR 路径
